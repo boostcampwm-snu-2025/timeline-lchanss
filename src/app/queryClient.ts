@@ -1,3 +1,12 @@
-import {  QueryClient } from "@tanstack/react-query";
+import { QueryCache, QueryClient } from "@tanstack/react-query";
 
-export const queryClient = new QueryClient();
+import { handleMutationError, handleQueryError } from "@/shared/api/errorHandlers";
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    mutations: {
+      onError: handleMutationError,
+    },
+  },
+  queryCache: new QueryCache({ onError: handleQueryError }),
+});
