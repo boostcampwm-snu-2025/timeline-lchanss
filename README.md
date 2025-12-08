@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Timeline Visualization Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 시간의 밀도를 시각화하는 타임라인 도구
 
-Currently, two official plugins are available:
+## 목차
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [📖 프로젝트 소개](#-프로젝트-소개)
+- [🏗️ 기술 스택](#️-기술-스택)
+- [🎉 시작하기](#-시작하기)
+- [📚 문서](#-문서)
 
-## React Compiler
+## 📖 프로젝트 소개
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+내 인생의 시간을 시각적으로 이해하고, 의미 있는 순간들을 재발견하게 만드는 타임라인 시각화 도구입니다.
 
-## Expanding the ESLint configuration
+단순히 이력서를 만들거나 연말 회고를 작성하는 것을 넘어서, 사람들이 자신의 삶의 흐름을 한눈에 보면서 "아, 이 시기에 이런 일들이 있었구나", "생각보다 이 프로젝트가 길었네" 같은 통찰을 얻을 수 있습니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 핵심 가치
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**"시간의 밀도를 시각화한다"**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+텍스트 리스트로는 느낄 수 없는 것들:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 어떤 시기가 얼마나 바빴는지
+- 프로젝트들이 어떻게 겹쳐있었는지
+- 삶의 전환점이 언제였는지
+- 생각보다 긴/짧았던 경험들
+
+### 타겟 사용자
+
+- 개발자, 디자이너 등 프로젝트 기반으로 일하는 사람들
+- 자기 성찰을 중요하게 생각하는 20-30대
+- 취업 준비 등 커리어 정리가 필요한 사람들
+- 연말 회고를 작성하는 사람들
+
+### 주요 기능
+
+- **타임라인 시각화**: 시간을 공간으로 변환하여 직관적으로 이해
+- **줌/팬 내비게이션**: 10년을 한눈에 보다가 한 달로 확대하는 자유로운 탐색
+- **이벤트 관리**: 프로젝트, 일상, 여행 등 다양한 경험을 트랙별로 정리
+- **드래그 앤 드롭**: 직관적인 이벤트 편집으로 날짜와 기간 조정
+
+## 🏗️ 기술 스택
+
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-F69220?style=flat-square&logo=pnpm&logoColor=white)
+
+- **Frontend**: React 19.2 + TypeScript 5.9 + Vite 7.2
+- **상태 관리**: TanStack Query 5.90
+- **스타일링**: Tailwind CSS 4.1
+- **코드 품질**: ESLint 9.39 + Prettier 3.7
+- **패키지 매니저**: pnpm
+
+## 🎉 시작하기
+
+```bash
+# 의존성 설치
+pnpm install
+
+# 개발 서버 실행
+pnpm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📚 문서
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+자세한 프로젝트 기획서와 설계서는 [GitHub Wiki](https://github.com/lchanss/timeline-lchanss/wiki)에서 확인하실 수 있습니다.
+
+---
