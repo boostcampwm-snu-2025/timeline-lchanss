@@ -1,9 +1,7 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-    return (
-      <div>timeline project</div>
-  )
+  return <div>timeline project</div>;
 }
 
-export default App
+export default App;
