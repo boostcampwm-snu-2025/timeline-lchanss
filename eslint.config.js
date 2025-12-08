@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import importPlugin from "eslint-plugin-import";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 export default defineConfig([
   globalIgnores(['dist', 'vite.config.ts']),
@@ -22,6 +23,7 @@ export default defineConfig([
     },
      plugins: {
       import: importPlugin,
+      "@tanstack/query": pluginQuery,
     },
      rules: {
       "@typescript-eslint/no-unused-vars": "warn",
