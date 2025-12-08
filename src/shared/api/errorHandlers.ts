@@ -1,4 +1,4 @@
-import { HttpError } from "./httpError";
+import { HttpError } from "./HttpError";
 
 export const handleQueryError = (error: Error) => {
   if (error instanceof HttpError) {
@@ -29,4 +29,3 @@ export const handleMutationError = (error: Error) => {
     return;
   }
 };
-
