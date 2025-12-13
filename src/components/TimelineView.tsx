@@ -2,6 +2,10 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import { TIMELINE_CONFIG } from "@/constants/timeline";
 
+import { mockTracks } from "@/data/mockTracks";
+
+import TrackRow from "./TrackRow";
+
 export default function TimelineView() {
   return (
     <div className="w-full h-full bg-gray-50">
@@ -24,9 +28,9 @@ export default function TimelineView() {
               height: "400px",
             }}
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="text-gray-400">타임라인 컨텐츠 영역</p>
-            </div>
+            {mockTracks.map((track) => (
+              <TrackRow key={track.id} track={track} />
+            ))}
           </div>
         </TransformComponent>
       </TransformWrapper>
