@@ -56,6 +56,7 @@ export const TimelinePage = () => {
         zoomLevel={zoomLevel}
         selectedMonth={selectedMonth}
         onZoomChange={setZoomLevel}
+        tracks={tracks}
       />
       <TimelineCanvas
         zoomLevel={zoomLevel}
