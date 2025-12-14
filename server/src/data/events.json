@@ -19,18 +19,20 @@
   },
   {
     "id": "evt3",
-    "title": "스프링 부트 스터디",
+    "title": "vanilla-extract 공부",
     "startDate": "2025-03-01",
-    "endDate": "2025-05-31",
-    "track": "t-2",
+    "endDate": "2025-04-15",
+    "track": "t-3",
+    "description": "CSS-in-JS 라이브러리 vanilla-extract 학습",
     "color": "#10b981"
   },
   {
     "id": "evt4",
-    "title": "헬스 등록",
-    "startDate": "2025-01-15",
-    "endDate": "2025-12-31",
+    "title": "독서 모임",
+    "startDate": "2025-02-01",
+    "endDate": "2025-02-28",
     "track": "t-1",
+    "description": "매주 토요일 오후 3시 독서 모임 참여",
     "color": "#f59e0b"
   },
   {
@@ -38,7 +40,35 @@
     "title": "리액트 컨퍼런스",
     "startDate": "2025-09-20",
     "endDate": "2025-09-20",
-    "track": "t-2",
+    "track": "t-1",
+    "description": "React Conf 2025 참가",
     "color": "#ef4444"
+  },
+  {
+    "id": "evt6",
+    "title": "넷플릭스 클론",
+    "startDate": "2025-01-05",
+    "endDate": "2025-02-20",
+    "track": "t-2",
+    "description": "React + TypeScript로 넷플릭스 클론 코딩 프로젝트",
+    "color": "#e11d48"
+  },
+  {
+    "id": "evt7",
+    "title": "가계부 앱",
+    "startDate": "2025-05-01",
+    "endDate": "2025-06-30",
+    "track": "t-2",
+    "description": "개인 재무 관리를 위한 가계부 웹 애플리케이션 개발",
+    "color": "#059669"
+  },
+  {
+    "id": "evt8",
+    "title": "AI 블로그",
+    "startDate": "2025-08-01",
+    "endDate": "2025-10-15",
+    "track": "t-2",
+    "description": "OpenAI API를 활용한 AI 기반 블로그 플랫폼 개발",
+    "color": "#7c3aed"
   }
 ]
