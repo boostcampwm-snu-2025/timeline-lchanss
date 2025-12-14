@@ -1,6 +1,6 @@
-export interface Track {
+export type Track = {
   id: string;
   name: string;
-  color: string; // hex code
+  color: string;
   order: number;
-}
+};
