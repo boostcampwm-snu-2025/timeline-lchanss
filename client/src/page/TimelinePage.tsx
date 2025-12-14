@@ -1,16 +1,20 @@
+import { useState } from "react";
+
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchEvents, fetchTracks } from "@/api/timeline";
+import { fetchTracks, fetchEvents } from "@/api/timeline";
+import { EventDetailModal } from "@/components/EventDetailModal";
 import { StatusBar } from "@/components/StatusBar";
 import { TimelineCanvas } from "@/components/TimelineCanvas";
 import { TimelineHeader } from "@/components/TimelineHeader";
 import { useZoom } from "@/hooks/useZoom";
+import type { Event } from "@/types/event";
 
 export const TimelinePage = () => {
   const { zoomLevel, selectedMonth, setZoomLevel, setSelectedMonth } =
     useZoom();
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
-  // 트랙 데이터 fetching
   const {
     data: tracks = [],
     isLoading: isLoadingTracks,
@@ -20,7 +24,6 @@ export const TimelinePage = () => {
     queryFn: fetchTracks,
   });
 
-  // 이벤트 데이터 fetching
   const {
     data: events = [],
     isLoading: isLoadingEvents,
@@ -30,7 +33,6 @@ export const TimelinePage = () => {
     queryFn: fetchEvents,
   });
 
-  // 로딩 상태
   if (isLoadingTracks || isLoadingEvents) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -39,7 +41,6 @@ export const TimelinePage = () => {
     );
   }
 
-  // 에러 상태
   if (tracksError || eventsError) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -51,21 +52,33 @@ export const TimelinePage = () => {
   }
 
   return (
-    <div className="flex flex-col h-screen">
-      <TimelineHeader
-        zoomLevel={zoomLevel}
-        selectedMonth={selectedMonth}
-        onZoomChange={setZoomLevel}
+    <>
+      <div className="flex flex-col h-screen">
+        <TimelineHeader
+          zoomLevel={zoomLevel}
+          selectedMonth={selectedMonth}
+          onZoomChange={setZoomLevel}
+          tracks={tracks}
+        />
+
+        <TimelineCanvas
+          zoomLevel={zoomLevel}
+          selectedMonth={selectedMonth}
+          tracks={tracks}
+          events={events}
+          onMonthClick={setSelectedMonth}
+          onEventClick={setSelectedEvent}
+        />
+
+        <StatusBar eventCount={events.length} />
+      </div>
+
+      <EventDetailModal
+        isOpen={selectedEvent !== null}
+        onClose={() => setSelectedEvent(null)}
+        event={selectedEvent}
         tracks={tracks}
       />
-      <TimelineCanvas
-        zoomLevel={zoomLevel}
-        selectedMonth={selectedMonth}
-        tracks={tracks}
-        events={events}
-        onMonthClick={setSelectedMonth}
-      />
-      <StatusBar eventCount={events.length} />
-    </div>
+    </>
   );
 };

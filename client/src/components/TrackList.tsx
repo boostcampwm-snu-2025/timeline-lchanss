@@ -10,6 +10,7 @@ type Props = {
   events: Event[];
   zoomLevel: ZoomLevel;
   selectedMonth: number;
+  onEventClick?: (event: Event) => void;
 };
 
 export const TrackList = ({
@@ -17,6 +18,7 @@ export const TrackList = ({
   events,
   zoomLevel,
   selectedMonth,
+  onEventClick,
 }: Props) => {
   // order 순으로 정렬
   const sortedTracks = [...tracks].sort((a, b) => a.order - b.order);
@@ -30,6 +32,7 @@ export const TrackList = ({
           events={events.filter((e) => e.track === track.id)}
           zoomLevel={zoomLevel}
           selectedMonth={selectedMonth}
+          onEventClick={onEventClick}
         />
       ))}
     </div>

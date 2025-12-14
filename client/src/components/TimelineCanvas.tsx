@@ -11,6 +11,7 @@ type Props = {
   tracks: Track[];
   events: Event[];
   onMonthClick: (month: number) => void;
+  onEventClick?: (event: Event) => void;
 };
 
 export const TimelineCanvas = ({
@@ -19,12 +20,12 @@ export const TimelineCanvas = ({
   tracks,
   events,
   onMonthClick,
+  onEventClick,
 }: Props) => {
   return (
     <div className="flex-1 overflow-hidden relative bg-white">
       <div className="w-full h-full overflow-auto py-5">
         <div className="min-w-full px-10">
-          {/* 시간 눈금 헤더 - sticky */}
           <div className="sticky top-0 bg-white z-10 pb-4 border-b-2 border-gray-200 mb-5">
             <TimeScale
               zoomLevel={zoomLevel}
@@ -39,6 +40,7 @@ export const TimelineCanvas = ({
             events={events}
             zoomLevel={zoomLevel}
             selectedMonth={selectedMonth}
+            onEventClick={onEventClick}
           />
         </div>
       </div>
