@@ -1,9 +1,9 @@
-export interface Event {
+export type Event = {
   id: string;
   title: string;
-  startDate: string; // ISO 8601 형식
+  startDate: string;
   endDate: string | null;
-  track: string; // track id
+  track: string;
   description?: string;
-  color?: string; // hex code
-}
+  color?: string;
+};
