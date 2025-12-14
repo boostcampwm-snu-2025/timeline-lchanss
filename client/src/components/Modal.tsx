@@ -32,7 +32,7 @@ export const Modal = ({ isOpen, onClose, title, children }: Props) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* 오버레이 */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"
+        className="absolute inset-0 bg-black opacity-30 transition-opacity"
         onClick={onClose}
       />
 
