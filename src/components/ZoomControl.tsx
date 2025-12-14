@@ -6,10 +6,14 @@ type Props = {
 };
 
 export const ZoomControl = ({ zoomLevel, onZoomChange }: Props) => {
+  const handleYearView = () => {
+    onZoomChange("year");
+  };
+
   return (
     <div className="flex gap-3">
       <button
-        onClick={() => onZoomChange("year")}
+        onClick={handleYearView}
         className={`
           px-4 py-2 border rounded-md text-sm transition-all
           ${

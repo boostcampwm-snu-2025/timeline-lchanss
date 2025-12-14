@@ -25,6 +25,7 @@ export const TimeScale = ({
             label={getMonthName(i)}
             onClick={() => onMonthClick(i)}
             clickable
+            isSelected={i === selectedMonth}
           />
         ))}
       </div>
