@@ -15,7 +15,13 @@ export const TimelinePage = () => {
         selectedMonth={selectedMonth}
         onZoomChange={setZoomLevel}
       />
-      <div>타임라인</div>
+      <TimelineCanvas
+        zoomLevel={zoomLevel}
+        selectedMonth={selectedMonth}
+        tracks={TRACKS}
+        events={EVENTS}
+        onMonthClick={setSelectedMonth}
+      />
       <StatusBar eventCount={EVENTS.length} />
     </div>
   );
