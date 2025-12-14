@@ -4,7 +4,6 @@ import { fetchEvents, fetchTracks } from "@/api/timeline";
 import { StatusBar } from "@/components/StatusBar";
 import { TimelineCanvas } from "@/components/TimelineCanvas";
 import { TimelineHeader } from "@/components/TimelineHeader";
-import { TRACKS, EVENTS } from "@/constants/sampleData";
 import { useZoom } from "@/hooks/useZoom";
 
 export const TimelinePage = () => {
