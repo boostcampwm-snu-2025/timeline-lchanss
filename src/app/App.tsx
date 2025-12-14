@@ -1,12 +1,7 @@
-import Layout from "@/components/Layout";
-import TimelineView from "@/components/TimelineView";
+import { TimelinePage } from "@/page/TimelinePage";
 
 function App() {
-  return (
-    <Layout>
-      <TimelineView />
-    </Layout>
-  );
+  return <TimelinePage />;
 }
 
 export default App;
