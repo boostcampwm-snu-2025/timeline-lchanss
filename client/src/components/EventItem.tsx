@@ -7,6 +7,7 @@ type Props = {
   endDate: Date;
   totalDays: number;
   trackColor: string;
+  onClick?: (event: Event) => void;
 };
 
 export const EventItem = ({
@@ -15,6 +16,7 @@ export const EventItem = ({
   endDate,
   totalDays,
   trackColor,
+  onClick,
 }: Props) => {
   const eventStart = parseDate(event.startDate);
   const eventEnd = event.endDate ? parseDate(event.endDate) : eventStart;
@@ -34,6 +36,7 @@ export const EventItem = ({
 
   return (
     <div
+      onClick={() => onClick?.(event)}
       className="absolute h-9 rounded-md px-3 flex items-center text-sm font-medium text-white cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-lg overflow-hidden whitespace-nowrap shadow-md"
       style={{
         left: `${left}%`,

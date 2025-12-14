@@ -11,6 +11,7 @@ type Props = {
   events: Event[];
   zoomLevel: ZoomLevel;
   selectedMonth: number;
+  onEventClick?: (event: Event) => void;
 };
 
 export const TrackItem = ({
@@ -18,6 +19,7 @@ export const TrackItem = ({
   events,
   zoomLevel,
   selectedMonth,
+  onEventClick,
 }: Props) => {
   // 날짜 범위 계산
   let startDate: Date, endDate: Date;
@@ -62,6 +64,7 @@ export const TrackItem = ({
             endDate={endDate}
             totalDays={totalDays}
             trackColor={track.color}
+            onClick={onEventClick}
           />
         ))}
 
