@@ -20,7 +20,7 @@
   {
     "id": "evt3",
     "title": "vanilla-extract 공부",
-    "startDate": "2025-03-01",
+    "startDate": "2025-02-01",
     "endDate": "2025-04-15",
     "track": "t-3",
     "description": "CSS-in-JS 라이브러리 vanilla-extract 학습",
@@ -57,7 +57,7 @@
     "id": "evt7",
     "title": "가계부 앱",
     "startDate": "2025-05-01",
-    "endDate": "2025-06-30",
+    "endDate": "2025-07-16",
     "track": "t-2",
     "description": "개인 재무 관리를 위한 가계부 웹 애플리케이션 개발",
     "color": "#059669"
@@ -70,5 +70,23 @@
     "track": "t-2",
     "description": "OpenAI API를 활용한 AI 기반 블로그 플랫폼 개발",
     "color": "#7c3aed"
+  },
+  {
+    "id": "evt-1765710511238",
+    "title": "크리스마스 파티",
+    "track": "t-1",
+    "startDate": "2025-12-25",
+    "endDate": "2025-12-25",
+    "description": "연말을 즐기기 위한 파티!",
+    "color": "#f73b3b"
+  },
+  {
+    "id": "evt-1765713918050",
+    "title": "새 이벤트 ",
+    "track": "t-3",
+    "startDate": "2025-07-23",
+    "endDate": "2025-11-26",
+    "description": "이건 선택입니다",
+    "color": "#589c40"
   }
 ]
